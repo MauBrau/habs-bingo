@@ -1,0 +1,143 @@
+{
+    "players": [
+        {
+            "name": "Anderson",
+            "position": "Winger",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Blais",
+            "position": "Winger",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Bolduc",
+            "position": "Winger",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Carrier",
+            "position": "Defenceman",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Caufield",
+            "position": "Winger",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Dach",
+            "position": "Centre",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Demidov",
+            "position": "Winger",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Dobes",
+            "position": "Goalie",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Dobson",
+            "position": "Defenceman",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Evans",
+            "position": "Centre",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Gallagher",
+            "position": "Winger",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Guhle",
+            "position": "Defenceman",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Hutson",
+            "position": "Defenceman",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Kahkonen",
+            "position": "Goalie",
+            "isActivePlayer": false
+        },
+        {
+            "name": "Kapanen",
+            "position": "Centre",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Laine",
+            "position": "Winger",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Matheson",
+            "position": "Defenceman",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Montembeault",
+            "position": "Goalie",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Newhook",
+            "position": "Centre",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Price",
+            "position": "Goalie",
+            "isActivePlayer": false
+        },
+        {
+            "name": "Slafkovsky",
+            "position": "Winger",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Struble",
+            "position": "Defenceman",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Suzuki",
+            "position": "Centre",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Veleno",
+            "position": "Centre",
+            "isActivePlayer": false
+        },
+        {
+            "name": "Xhekaj",
+            "position": "Defenceman",
+            "isActivePlayer": true
+        }
+    ],
+    "bingoOptions": [
+        { 
+            "text": "Habs Shut Out",
+            "type": "Generic"
+        },
+        { 
+            "text": " Goal",
+            "type": "PlayerSpecific"
+        },
+        { 
+            "text": " Assist",
+            "type": "PlayerSpecific"
+        }
+    ]
+}

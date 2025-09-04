@@ -3,8 +3,8 @@ import BingoCard from "./components/BingoCard";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div>
+      <main>
         <Image
           className="object-center"
           src="/unofficial-habs-bingo.svg"
@@ -13,7 +13,7 @@ export default function Home() {
           height={150}
           priority
         />
-        <div>
+        <div className="font-sans items-center justify-items-center min-h-screen p-8">
           <BingoCard />
         </div>
       </main>

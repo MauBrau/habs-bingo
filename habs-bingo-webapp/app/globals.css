@@ -3,6 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --habs-red: #AF1E2D;
+  --habs-blue: #192168;
+}
+
+@theme {
+  --color-habs-red: var(--habs-red);
+  --color-habs-blue: var(--habs-blue)
 }
 
 @theme inline {

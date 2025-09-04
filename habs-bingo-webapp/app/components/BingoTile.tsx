@@ -8,7 +8,11 @@ interface TileProps {
 export default function BingoTile({ text } : TileProps) {
     const [isChecked, setIsChecked] = useState<Boolean>(false);
 
-    return <div className="bg-white hover:bg-blue ">
-        Bingo Tile - {text}
+    const handleClick = () => {
+        setIsChecked((prevState) => !prevState)
+    }
+
+    return <div className={`${isChecked ? 'bg-habs-red' : 'hover:bg-habs-blue'}`} onClick={handleClick}>
+        <p className={`${isChecked}`}>{text}</p>
     </div>
 }
