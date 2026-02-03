@@ -10,12 +10,16 @@ export enum BingoCardType {
     PlayerSpecific = "Player",
     Penalty = "Penalty"
 }
+export interface TileStatus {
+    text: string,
+    isChecked: boolean
+}
 
 export interface Player {
     name: string
     position: PlayerPositions,
-    isActivePlayer: Boolean,
-    isOnCard?: Boolean
+    isActivePlayer: boolean,
+    isOnCard?: boolean
 }
 
 export interface BingoOptions {
@@ -25,7 +29,7 @@ export interface BingoOptions {
 
 export interface PenaltyTypes {
     text: string,
-    isOnCard?: Boolean
+    isOnCard?: boolean
 }
 
 export interface BingoTileOption {

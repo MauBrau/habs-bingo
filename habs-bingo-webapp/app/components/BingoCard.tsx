@@ -8,6 +8,7 @@ import {
     PenaltyTypes,
     Player,
     PlayerPositions,
+    TileStatus,
 } from "../interface/IBingoBoard";
 import { useEffect, useState } from "react";
 import BingoBoardData from "../assets/bingo-board.json";
@@ -27,7 +28,7 @@ export default function BingoCard() {
                 player.position !== PlayerPositions.Goalie,
         ),
     );
-    const [tiles, setTiles] = useState<string[]>([]);
+    const [tiles, setTiles] = useState<TileStatus[]>([]);
 
     let usedPlayersCount = 0, usedPenaltyCount = 0;
 
@@ -52,14 +53,17 @@ export default function BingoCard() {
 
     function storeBoard() {
         let generatedBoard = generateBoard();
-        generatedBoard[FREE_SPACE] = "FREE";
+        generatedBoard[FREE_SPACE] =  {
+            text: "FREE",
+            isChecked: false
+        };
         localStorage.setItem('tiles', JSON.stringify(generatedBoard));
         localStorage.setItem('generationDate', new Date().toString());
         setTiles(generatedBoard);
     }
 
     function generateBoard() {
-        let generatedBoard: string[] = [];
+        let generatedBoard: TileStatus[] = [];
         for (let i = 0; i < NUM_TILES; i++) {
             let bingoTileOption: BingoTileOption, randomValue: number;
             do {
@@ -78,7 +82,10 @@ export default function BingoCard() {
                 randomPlayer.isOnCard = true;
                 usedPlayersCount++;
                 generatedBoard.push(
-                    `${randomPlayer.name}${bingoTileOption.text}`,
+                    {
+                        text: `${randomPlayer.name}${bingoTileOption.text}`,
+                        isChecked: false
+                    }
                 );
             } else if (bingoTileOption.type === BingoCardType.Penalty) {
                 let penaltyOption: PenaltyTypes;
@@ -91,9 +98,19 @@ export default function BingoCard() {
 
                 penaltyOption.isOnCard = true;
                 usedPenaltyCount++;
-                generatedBoard.push("Penalty:" + penaltyOption.text);
+                generatedBoard.push(
+                    {
+                        text: "Penalty:" + penaltyOption.text,
+                        isChecked: false
+                    }
+                );
             } else {
-                generatedBoard.push(bingoTileOption.text);
+                generatedBoard.push(
+                    {
+                        text: bingoTileOption.text,
+                        isChecked: false
+                    }
+                );
             }
         }
         return generatedBoard;
@@ -126,11 +143,16 @@ export default function BingoCard() {
         return false;
     }
 
+    const handleClick = (tile: TileStatus, index: number) => {
+        tiles[index].isChecked = !tiles[index].isChecked;
+        localStorage.setItem('tiles', JSON.stringify(tiles));
+    };
+
     return tiles.length > 0 ? (
         <div className="items-center bg-white max-w-s p-6 rounded-lg">
             <div className={`h-200 w-200 grid grid-cols-5 grid-rows-5 gap-4`}>
                 {tiles.map((tile, index) => (
-                    <BingoTile key={index} text={tile} />
+                    <BingoTile key={index} text={tile.text} isChecked={tile.isChecked} onClick={() => handleClick(tile, index)} />
                 ))}
             </div>
         </div>
