@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --outline: #7e7e7e;
   --habs-red: #AF1E2D;
   --habs-blue: #192168;
 }

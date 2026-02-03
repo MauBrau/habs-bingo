@@ -7,22 +7,36 @@ export enum PlayerPositions {
 
 export enum BingoCardType {
     Generic = "Generic",
-    PlayerSpecific = "Player"
+    PlayerSpecific = "Player",
+    Penalty = "Penalty"
 }
 
 export interface Player {
-    name: String,
+    name: string
     position: PlayerPositions,
-    isActivePlayer: Boolean
+    isActivePlayer: Boolean,
+    isOnCard?: Boolean
 }
 
+export interface BingoOptions {
+    penaltyLimit: number,
+    playerLimit: number
+}
 
-export interface BingoOption {
-    text: String,
-    type: BingoCardType
+export interface PenaltyTypes {
+    text: string,
+    isOnCard?: Boolean
+}
+
+export interface BingoTileOption {
+    text: string,
+    type: BingoCardType,
+    isOnCardCount?: number;
 }
 
 export interface BingoBoard {
+    bingoOptions: BingoOptions,
     players: Player[],
-    bingoOptions: BingoOption[]
+    bingoTileOptions: BingoTileOption[]
+    penaltyTypes: PenaltyTypes[];
 }

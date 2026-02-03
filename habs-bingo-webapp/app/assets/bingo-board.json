@@ -1,4 +1,8 @@
 {
+    "bingoOptions" :{
+        "penaltyLimit": 3,
+        "playerLimit": 5
+    },
     "players": [
         {
             "name": "Anderson",
@@ -8,7 +12,7 @@
         {
             "name": "Blais",
             "position": "Winger",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Bolduc",
@@ -78,7 +82,7 @@
         {
             "name": "Laine",
             "position": "Winger",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Matheson",
@@ -93,11 +97,6 @@
         {
             "name": "Newhook",
             "position": "Centre",
-            "isActivePlayer": true
-        },
-        {
-            "name": "Price",
-            "position": "Goalie",
             "isActivePlayer": false
         },
         {
@@ -118,7 +117,7 @@
         {
             "name": "Veleno",
             "position": "Centre",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Xhekaj",
@@ -126,18 +125,123 @@
             "isActivePlayer": true
         }
     ],
-    "bingoOptions": [
+    "bingoTileOptions": [
         { 
-            "text": "Habs Shut Out",
+            "text": "Penalty: ",
+            "type": "Penalty"
+        },
+        { 
+            "text": "Habs get a shut out",
             "type": "Generic"
         },
         { 
-            "text": " Goal",
-            "type": "PlayerSpecific"
+            "text": "Timeout called (either team)",
+            "type": "Generic"
         },
         { 
-            "text": " Assist",
-            "type": "PlayerSpecific"
+            "text": "Goal, first 5 minutes of any period",
+            "type": "Generic"
+        },
+        { 
+            "text": "Goal, last 5 minutes of any period",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs powerplay goal",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs short-handed goal",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs get powerplay",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs player: 2+ goals",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs have 10+ shots on goal",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs have 20+ shots on goal",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs have 30+ shots on goal",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs goalie has 10+ saves",
+            "type": "Generic"
+        },
+                { 
+            "text": "Habs goalie has 20+ saves",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs goalie has 30+ saves",
+            "type": "Generic"
+        },
+        { 
+            "text": "5 on 3 (either team)",
+            "type": "Generic"
+        },
+        { 
+            "text": "5+ total goals (both teams)",
+            "type": "Generic"
+        },
+        { 
+            "text": "Unassisted goal",
+            "type": "Generic"
+        },
+                { 
+            "text": "2 assists on any goal",
+            "type": "Generic"
+        },
+        { 
+            "text": " goal",
+            "type": "Player"
+        },
+        { 
+            "text": " assist",
+            "type": "Player"
+        },
+        { 
+            "text": " point",
+            "type": "Player"
+        }
+    ],
+    "penaltyTypes": [
+        { 
+            "text": " elbowing"
+        },
+        { 
+            "text": " hooking"
+        },
+        { 
+            "text": " tripping"
+        },
+        { 
+            "text": " roughing"
+        },
+        { 
+            "text": " interference"
+        },
+        { 
+            "text": " slashing"
+        },
+        { 
+            "text": " holding"
+        },
+        { 
+            "text": " holding the stick"
+        },
+        { 
+            "text": " puck over the glass"
         }
     ]
 }
