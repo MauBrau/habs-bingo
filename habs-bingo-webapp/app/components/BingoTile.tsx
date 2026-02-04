@@ -1,6 +1,5 @@
 "use client";
-import React, { useState } from "react";
-import { TileStatus } from "../interface/IBingoBoard";
+import React, { useEffect, useState } from "react";
 
 interface BingoTileProps {
   text: string;
@@ -15,16 +14,17 @@ export default function BingoTile({ text, isChecked, onClick }: BingoTileProps) 
         setIsSelected((prevState) => !prevState);
         onClick();
     };
+
     return (
         <div
             className={`group
                 ${isSelected ? "bg-habs-red" : "hover:bg-habs-blue"} 
                 select-none cursor-pointer place-content-center
-                outline-5 outline-solid`}
+                outline-3 sm:outline-7 outline-solid outline-offset-2 outline-(--habs-blue)`}
             onClick={handleClick}
         >
             <p
-                className={`${isSelected ? 'text-gray-100' : 'text-gray-500'} text-center group-hover:text-gray-100`}
+                className={`leading-5 ${isSelected ? 'text-gray-100' : 'text-black'} font-bold text-center group-hover:text-gray-100`}
             >
                 {text}
             </p>

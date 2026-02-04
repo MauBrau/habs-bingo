@@ -204,9 +204,9 @@ export default function BingoCard() {
     };
 
     return tiles.length > 0 ? (
-        <div className="bg-white max-w-s p-6 rounded-lg">
+        <div className="bg-white h-full sm:p-6 p-2 rounded-lg">
             <div className="pb-4">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap items-center justify-between">
                     <Image
                         src="/unofficial-habs-bingo.svg"
                         alt="Unofficial Habs Bingo logo"
@@ -245,7 +245,7 @@ export default function BingoCard() {
                     </div>
                 </Dialog>
             </div>
-            <div className={`h-200 w-200 grid grid-cols-5 grid-rows-5 gap-3`}>
+            <div className="sm:aspect-square sm:w-200 grid grid-cols-5 grid-rows-5 gap-3">
                 {tiles.map((tile, index) => (
                     <BingoTile
                         key={index}
