@@ -19,10 +19,23 @@ export const thisIsAnUnusedExport =
     "this export only exists to disable fast refresh for this file";
 
 export default function BingoCard() {
+    const SIZE: number = 5;
+    const NUM_TILES: number = SIZE * SIZE;
+    const FREE_SPACE: number = 12;
+    const BLANK_STATE = [
+        [false, false, false, false, false],
+        [false, false, false, false, false],
+        [false, false, true, false, false],
+        [false, false, false, false, false],
+        [false, false, false, false, false],
+    ];
+
     const [bingoData, setBingoData] = useState<BingoBoard>(
         BingoBoardData as BingoBoard,
     );
-    const bingoOptions = bingoData.bingoOptions;
+    const bingoOptions: BingoOptions = bingoData.bingoOptions;
+    const [cardState, setCardState] = useState<boolean[][]>(BLANK_STATE);
+    const [currentBingos, setCurrentBingos] = useState<number[][]>([]);
 
     const [players, setPlayers] = useState<Player[]>(
         bingoData.players.filter(
@@ -34,28 +47,35 @@ export default function BingoCard() {
     const [tiles, setTiles] = useState<TileStatus[]>([]);
     const [open, setOpen] = useState<boolean>(false);
 
-    let usedPlayersCount = 0,
-        usedPenaltyCount = 0;
-
-    const NUM_TILES: number = 25;
-    const FREE_SPACE: number = 12;
+    let usedPlayersCount: number = 0,
+        usedPenaltyCount: number = 0;
 
     useEffect(() => {
         if (
             localStorage.getItem("tiles") &&
-            localStorage.getItem("generationDate")
+            localStorage.getItem("generationDate") &&
+            localStorage.getItem("cardState") &&
+            localStorage.getItem("currentBingos")
         ) {
-            const lastDate = new Date(
+            const lastDate: Date = new Date(
                 localStorage.getItem("generationDate") as string,
             );
-            const timeSince = new Date().getTime() - lastDate.getTime();
+            const timeSince: number = new Date().getTime() - lastDate.getTime();
             if (timeSince >= 60 * 60 * 24 * 1000) {
                 storeBoard();
             } else {
-                const existingBoard = JSON.parse(
+                const existingBoard: TileStatus[] = JSON.parse(
                     localStorage.getItem("tiles") as string,
                 );
                 setTiles(existingBoard);
+                const existingCardState: boolean[][] = JSON.parse(
+                    localStorage.getItem("cardState") as string,
+                );
+                setCardState(existingCardState);
+                const existingBingos: number[][] = JSON.parse(
+                    localStorage.getItem("currentBingos") as string,
+                );
+                setCurrentBingos(existingBingos);
             }
         } else {
             storeBoard();
@@ -63,13 +83,16 @@ export default function BingoCard() {
     }, []);
 
     const storeBoard = () => {
-        let generatedBoard = generateBoard();
+        let generatedBoard: TileStatus[] = generateBoard();
         generatedBoard[FREE_SPACE] = {
             text: "FREE",
             isChecked: true,
+            isLocked: true,
         };
         localStorage.setItem("tiles", JSON.stringify(generatedBoard));
         localStorage.setItem("generationDate", new Date().toString());
+        localStorage.setItem("cardState", JSON.stringify(BLANK_STATE));
+        localStorage.setItem("currentBingos", JSON.stringify([]));
         setTiles(generatedBoard);
     };
 
@@ -155,15 +178,135 @@ export default function BingoCard() {
         return false;
     };
 
+    function arrayComparator<T>(arrayA: T[], arrayB: T[]): boolean {
+        return JSON.stringify(arrayA) === JSON.stringify(arrayB);
+    }
+
+    const winChecker = () => {
+        const C_WIN_INDEXES: number[] = [
+            0, 1, 2, 3, 4, 5, 10, 15, 20, 21, 22, 23, 24,
+        ];
+        const H_WIN_INDEXES: number[] = [
+            0, 4, 5, 9, 10, 11, 12, 13, 14, 15, 19, 20, 24,
+        ];
+
+        // Rows
+        for (let row = 0; row < SIZE; row++) {
+            let rowExists = false;
+            if (cardState[row].every((cell) => cell === true)) {
+                const currentRow = [row, row + 1, row + 2, row + 3, row + 4];
+                if (
+                    currentBingos.some((curBingo) =>
+                        arrayComparator(curBingo, currentRow),
+                    )
+                ) {
+                    continue;
+                } else {
+                    storeLine(currentRow);
+                }
+                return true;
+            }
+        }
+
+        // Columns
+        for (let col = 0; col < SIZE; col++) {
+            let colWin = true;
+            for (let row = 0; row < SIZE; row++) {
+                if (cardState[row][col] !== true) {
+                    colWin = false;
+                    break;
+                }
+            }
+            if (colWin) {
+                const currentCol = [
+                    col,
+                    col + SIZE,
+                    col + SIZE * 2,
+                    col + SIZE * 3,
+                    col + SIZE * 4,
+                ];
+                if (
+                    currentBingos.some((curBingo) =>
+                        arrayComparator(curBingo, currentCol),
+                    )
+                ) {
+                    continue;
+                } else {
+                    storeLine(currentCol);
+                }
+                return true;
+            }
+        }
+
+        // Diagonals
+        let diag1 = true,
+            diag2 = true;
+        const diag1Array = [0, 6, 12, 18, 24];
+        const diag2Array = [4, 8, 12, 16, 20];
+        for (let i = 0; i < SIZE; i++) {
+            if (cardState[i][i] !== true) {
+                diag1 = false;
+            }
+            if (cardState[i][SIZE - 1 - i] !== true) {
+                diag2 = false;
+            }
+        }
+        const isDiag1AlreadyFound = diag1 && currentBingos.some((curBingo: number[]) => arrayComparator(curBingo, diag1Array));
+        const isDiag2AlreadyFound = diag2 && currentBingos.some((curBingo: number[]) => arrayComparator(curBingo, diag2Array));
+        if (diag1 || diag2) {
+            if (diag1 && diag2 && isDiag1AlreadyFound && isDiag2AlreadyFound) {
+                return false;
+            } else if (diag1 && diag2) {
+                if (isDiag1AlreadyFound) {
+                    storeLine(diag2Array);
+                } else {
+                    storeLine(diag1Array);
+                }
+            } else if (diag1 && !diag2) {
+                if (isDiag1AlreadyFound) {
+                    return false;
+                } else {
+                    storeLine(diag1Array);
+                }
+            } else if (!diag1 && diag2) {
+                if (isDiag2AlreadyFound) {
+                    return false;
+                } else {
+                    storeLine(diag2Array);
+                }
+            }
+            return true;
+        }
+
+        return false;
+    };
+
+    const storeLine = (newLine: number[]) => {
+        const newCurBingos = [...currentBingos, newLine];
+        setCurrentBingos(newCurBingos);
+        localStorage.setItem("currentBingos", JSON.stringify(newCurBingos));
+    };
+
     const handleClick = (index: number) => {
         tiles[index].isChecked = !tiles[index].isChecked;
+
+        const newCardState = { ...cardState };
+        newCardState[Math.floor(index / 5)][index % 5] = tiles[index].isChecked;
+        setCardState(newCardState);
+
         localStorage.setItem("tiles", JSON.stringify(tiles));
+        localStorage.setItem("cardState", JSON.stringify(newCardState));
+
+        const isBingo: boolean = winChecker();
+        if (isBingo) {
+            alert("!!!!!!!!!! BINGO !!!!!!!!!!");
+        }
     };
 
     const clearOptions = () => {
         // reset board data
         // setBingoData({...BingoBoardData} as BingoBoard); // i Wish you worked
-        let newBingoData = { ...bingoData };
+        let newBingoData: BingoBoard = { ...bingoData };
         newBingoData.bingoTileOptions = newBingoData.bingoTileOptions.map(
             (bingoTileOption: BingoTileOption) => {
                 bingoTileOption.isOnCardCount = 0;
@@ -178,7 +321,7 @@ export default function BingoCard() {
             },
         );
 
-        let newPlayers = players.map((player: Player) => {
+        let newPlayers: Player[] = players.map((player: Player) => {
             player.isOnCard = false;
             return player;
         });
@@ -249,8 +392,7 @@ export default function BingoCard() {
                 {tiles.map((tile, index) => (
                     <BingoTile
                         key={index}
-                        text={tile.text}
-                        isChecked={tile.isChecked}
+                        tile={tile}
                         onClick={() => handleClick(index)}
                     />
                 ))}

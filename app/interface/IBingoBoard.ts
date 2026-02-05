@@ -12,7 +12,8 @@ export enum BingoCardType {
 }
 export interface TileStatus {
     text: string,
-    isChecked: boolean
+    isChecked: boolean,
+    isLocked?: boolean
 }
 
 export interface Player {

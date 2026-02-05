@@ -1,18 +1,20 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { TileStatus } from "../interface/IBingoBoard";
 
 interface BingoTileProps {
-  text: string;
-  isChecked: boolean;
+  tile: TileStatus;
   onClick: () => void;
 }
 
-export default function BingoTile({ text, isChecked, onClick }: BingoTileProps) {
-    const [isSelected, setIsSelected] = useState<boolean>(isChecked);
+export default function BingoTile({ tile, onClick }: BingoTileProps) {
+    const [isSelected, setIsSelected] = useState<boolean>(tile.isChecked);
 
     const handleClick = () => {
-        setIsSelected((prevState) => !prevState);
-        onClick();
+        if (!tile.isLocked) {
+            setIsSelected((prevState) => !prevState);
+            onClick();
+        }
     };
 
     return (
@@ -26,7 +28,7 @@ export default function BingoTile({ text, isChecked, onClick }: BingoTileProps) 
             <p
                 className={`leading-5 ${isSelected ? 'text-gray-100' : 'text-black'} font-bold text-center group-hover:text-gray-100`}
             >
-                {text}
+                {tile.text}
             </p>
         </div>
     );
