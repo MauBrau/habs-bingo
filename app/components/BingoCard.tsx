@@ -329,6 +329,8 @@ export default function BingoCard() {
         setPlayers(newPlayers);
         setBingoData(newBingoData);
         setTiles([]);
+        setCardState(BLANK_STATE);
+        setCurrentBingos([]);
 
         usedPenaltyCount = 0;
         usedPlayersCount = 0;
