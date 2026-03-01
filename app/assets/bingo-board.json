@@ -120,6 +120,11 @@
             "isActivePlayer": true
         },
         {
+            "name": "Texier",
+            "position": "Winger",
+            "isActivePlayer": true
+        },
+        {
             "name": "Veleno",
             "position": "Centre",
             "isActivePlayer": false
