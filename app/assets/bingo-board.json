@@ -261,6 +261,28 @@
             "type": "Player"
         }
     ],
+    "bingoTileOptionsSilly": [
+        { 
+            "text": "Bet he wishes he could take that one back",
+            "type": "Generic"
+        },
+        { 
+            "text": "Players point when puck's over glass",
+            "type": "Generic"
+        },
+        { 
+            "text": "Lost a skake blade",
+            "type": "Generic"
+        },
+        { 
+            "text": "You can't help but say a player's name outloud in a funny voice",
+            "type": "Generic"
+        },
+        { 
+            "text": "You can't help but say a player's name outloud in a funny voice",
+            "type": "Generic"
+        }
+    ],
     "penaltyTypes": [
         { 
             "text": " elbowing"

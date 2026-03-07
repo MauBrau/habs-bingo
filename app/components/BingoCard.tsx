@@ -11,9 +11,11 @@ import {
     TileStatus,
 } from "../interface/IBingoBoard";
 import Image from "next/image";
-import { Dialog, DialogActions, DialogTitle } from "@mui/material";
+import { Checkbox, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControlLabel, IconButton, Tooltip } from "@mui/material";
 import { useEffect, useState } from "react";
+import SettingsIcon from '@mui/icons-material/Settings';
 import BingoBoardData from "../assets/bingo-board.json";
+import { Check } from "@mui/icons-material";
 
 export const thisIsAnUnusedExport =
     "this export only exists to disable fast refresh for this file";
@@ -47,6 +49,7 @@ export default function BingoCard() {
     );
     const [tiles, setTiles] = useState<TileStatus[]>([]);
     const [openNewCardPrompt, setOpenNewCardPrompt] = useState<boolean>(false);
+    const [openSettings, setOpenSetings] = useState<boolean>(false);
 
     let usedPlayersCount: number = 0,
         usedPenaltyCount: number = 0;
@@ -351,6 +354,14 @@ export default function BingoCard() {
         setGotBingo(false);
     };
 
+    const handleSettingsSave = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const formData = new FormData(event.currentTarget);
+        const formJson = Object.fromEntries((formData as any).entries());
+        console.log(JSON.stringify(formJson));
+        //handleClose();
+    }
+
     return tiles.length > 0 ? (
         <div className="bg-white h-max sm:p-6 p-2 mb-4 rounded-lg">
             <div>
@@ -369,6 +380,9 @@ export default function BingoCard() {
                         >
                             New Card?
                         </button>
+                        {<IconButton aria-label="settings" className="bg-habs-red" size="large">
+                            <SettingsIcon fontSize="large" />
+                        </IconButton>}
                     </div>
                 </div>
                 <Dialog
@@ -393,6 +407,33 @@ export default function BingoCard() {
                             Never mind
                         </button>
                     </div>
+                </Dialog>
+                <Dialog
+                    open={true}
+                    onClose={handleClose}
+                    aria-labelledby="alert-settings-dialog-title"
+                >
+                    <DialogTitle id="alert-settings-dialog-title">
+                        Settings
+                    </DialogTitle>
+                    <DialogContent>
+                        <div className="grid grid-rows-2">
+                            <form onSubmit={handleSettingsSave} id="settings-form">
+                                <FormControlLabel control={<Checkbox />} label="Silly mode?" />
+                            </form>
+                            <p className="text-gray-500 text-sm">(This will reset your current card if enabled)</p>
+                        </div>                   
+                    </DialogContent>
+                    <DialogActions sx={{ justifyContent: "center" }}>
+                        <button
+                            className="bg-habs-red hover:bg-habs-blue text-white font-bold py-2 px-4 rounded cursor-pointer"
+                            type="submit"
+                            form="settings-form"
+                        >
+                            Save
+                        </button>
+                    </DialogActions>
+                    
                 </Dialog>
                 <Dialog
                     open={gotBingo}
