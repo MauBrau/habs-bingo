@@ -26,7 +26,8 @@ export default function BingoTile({ tile, onClick }: BingoTileProps) {
             onClick={handleClick}
         >
             <p
-                className={`leading-5 ${isSelected ? 'text-gray-100' : 'text-black'} font-bold text-center group-hover:text-gray-100`}
+                className={`leading-5 ${isSelected ? "text-gray-100" : "text-black"} font-bold text-center group-hover:text-gray-100 wrap-anywhere hyphens-auto sm:hyphens-none `}
+                lang="en"
             >
                 {tile.text}
             </p>

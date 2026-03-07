@@ -145,6 +145,42 @@
             "type": "Generic"
         },
         { 
+            "text": "Habs kill a penalty",
+            "type": "Generic"
+        },
+        { 
+            "text": "Icing called",
+            "type": "Generic"
+        },
+        { 
+            "text": "Fight",
+            "type": "Generic"
+        },
+        { 
+            "text": "Offside called",
+            "type": "Generic"
+        },
+        { 
+            "text": "Coach's Challenge",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs score in the first",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs score in the second",
+            "type": "Generic"
+        },
+        { 
+            "text": "Shot hits the post",
+            "type": "Generic"
+        },
+        { 
+            "text": "Breakaway",
+            "type": "Generic"
+        },
+        { 
             "text": "Timeout called (either team)",
             "type": "Generic"
         },

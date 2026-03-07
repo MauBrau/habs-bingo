@@ -11,7 +11,7 @@ import {
     TileStatus,
 } from "../interface/IBingoBoard";
 import Image from "next/image";
-import { Dialog, DialogTitle } from "@mui/material";
+import { Dialog, DialogActions, DialogTitle } from "@mui/material";
 import { useEffect, useState } from "react";
 import BingoBoardData from "../assets/bingo-board.json";
 
@@ -36,6 +36,7 @@ export default function BingoCard() {
     const bingoOptions: BingoOptions = bingoData.bingoOptions;
     const [cardState, setCardState] = useState<boolean[][]>(BLANK_STATE);
     const [currentBingos, setCurrentBingos] = useState<number[][]>([]);
+    const [gotBingo, setGotBingo] = useState<boolean>(false);
 
     const [players, setPlayers] = useState<Player[]>(
         bingoData.players.filter(
@@ -45,7 +46,7 @@ export default function BingoCard() {
         ),
     );
     const [tiles, setTiles] = useState<TileStatus[]>([]);
-    const [open, setOpen] = useState<boolean>(false);
+    const [openNewCardPrompt, setOpenNewCardPrompt] = useState<boolean>(false);
 
     let usedPlayersCount: number = 0,
         usedPenaltyCount: number = 0;
@@ -293,14 +294,12 @@ export default function BingoCard() {
         const newCardState = { ...cardState };
         newCardState[Math.floor(index / 5)][index % 5] = tiles[index].isChecked;
         setCardState(newCardState);
+        
+        const isBingo: boolean = winChecker();
+        setGotBingo(isBingo);
 
         localStorage.setItem("tiles", JSON.stringify(tiles));
         localStorage.setItem("cardState", JSON.stringify(newCardState));
-
-        const isBingo: boolean = winChecker();
-        if (isBingo) {
-            alert("!!!!!!!!!! BINGO !!!!!!!!!!");
-        }
     };
 
     const clearOptions = () => {
@@ -337,20 +336,24 @@ export default function BingoCard() {
     };
 
     const newCardConfirmation = () => {
-        setOpen(true);
+        setOpenNewCardPrompt(true);
     };
     const handleConfirm = () => {
         clearOptions();
         storeBoard();
-        setOpen(false);
+        setOpenNewCardPrompt(false);
     };
     const handleClose = () => {
-        setOpen(false);
+        setOpenNewCardPrompt(false);
+    };
+
+    const handleContinue = () => {
+        setGotBingo(false);
     };
 
     return tiles.length > 0 ? (
-        <div className="bg-white h-full sm:p-6 p-2 rounded-lg">
-            <div className="pb-4">
+        <div className="bg-white h-max sm:p-6 p-2 mb-4 rounded-lg">
+            <div>
                 <div className="flex flex-wrap items-center justify-between">
                     <Image
                         src="/unofficial-habs-bingo.svg"
@@ -359,19 +362,21 @@ export default function BingoCard() {
                         height={150}
                         priority
                     />
-                    <button
-                        onClick={newCardConfirmation}
-                        className="bg-habs-red hover:bg-habs-blue text-white font-bold py-2 px-4 rounded cursor-pointer"
-                    >
-                        New Card?
-                    </button>
+                    <div>
+                        <button
+                            onClick={newCardConfirmation}
+                            className="bg-habs-red hover:bg-habs-blue text-white font-bold py-2 px-4 rounded cursor-pointer"
+                        >
+                            New Card?
+                        </button>
+                    </div>
                 </div>
                 <Dialog
-                    open={open}
+                    open={openNewCardPrompt}
                     onClose={handleClose}
-                    aria-labelledby="alert-dialog-title"
+                    aria-labelledby="alert-new-card-dialog-title"
                 >
-                    <DialogTitle id="alert-dialog-title">
+                    <DialogTitle id="alert-new-card-dialog-title">
                         Generate a new card?
                     </DialogTitle>
                     <div className="flex items-center justify-between p-6">
@@ -389,8 +394,25 @@ export default function BingoCard() {
                         </button>
                     </div>
                 </Dialog>
+                <Dialog
+                    open={gotBingo}
+                >
+                    <div className="text-center font-bold text-habs-red p-4 text-2xl">
+                        BINGO
+                    </div>
+                    <DialogActions sx={{ justifyContent: "center" }}>
+                        <div className="flex items-center justify-between p-6">
+                            <button
+                                className="bg-habs-red hover:bg-habs-blue text-white font-bold py-2 px-4 rounded cursor-pointer"
+                                onClick={handleContinue}
+                            >
+                                Continue
+                            </button>
+                        </div>
+                    </DialogActions>
+                </Dialog>
             </div>
-            <div className="sm:aspect-square sm:w-200 grid grid-cols-5 grid-rows-5 gap-3">
+            <div className="sm:aspect-square sm:w-200 grid grid-cols-5 grid-rows-5 gap-3 mt-2">
                 {tiles.map((tile, index) => (
                     <BingoTile
                         key={index}
