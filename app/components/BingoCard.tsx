@@ -32,9 +32,9 @@ export default function BingoCard() {
         [false, false, false, false, false],
     ];
 
-    const [bingoData, setBingoData] = useState<BingoBoard>(
-        BingoBoardData as BingoBoard,
-    );
+    const getFreshBoardData = () => JSON.parse(JSON.stringify(BingoBoardData)) as BingoBoard;
+    
+    const [bingoData, setBingoData] = useState<BingoBoard>(getFreshBoardData);
     const bingoOptions: BingoOptions = bingoData.bingoOptions;
     const [cardState, setCardState] = useState<boolean[][]>(BLANK_STATE);
     const [currentBingos, setCurrentBingos] = useState<number[][]>([]);
@@ -306,30 +306,15 @@ export default function BingoCard() {
     };
 
     const clearOptions = () => {
-        // reset board data
-        // setBingoData({...BingoBoardData} as BingoBoard); // i Wish you worked
-        let newBingoData: BingoBoard = { ...bingoData };
-        newBingoData.bingoTileOptions = newBingoData.bingoTileOptions.map(
-            (bingoTileOption: BingoTileOption) => {
-                bingoTileOption.isOnCardCount = 0;
-                return bingoTileOption;
-            },
+        const freshData = getFreshBoardData();
+        setBingoData(freshData);
+        setPlayers(
+            freshData.players.filter(
+                (player: Player) =>
+                    player.isActivePlayer &&
+                    player.position !== PlayerPositions.Goalie,
+            )
         );
-
-        newBingoData.penaltyTypes = newBingoData.penaltyTypes.map(
-            (penalty: PenaltyTypes) => {
-                penalty.isOnCard = false;
-                return penalty;
-            },
-        );
-
-        let newPlayers: Player[] = players.map((player: Player) => {
-            player.isOnCard = false;
-            return player;
-        });
-
-        setPlayers(newPlayers);
-        setBingoData(newBingoData);
         setTiles([]);
         setCardState(BLANK_STATE);
         setCurrentBingos([]);
