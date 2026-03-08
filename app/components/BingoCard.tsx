@@ -31,7 +31,7 @@ export default function BingoCard() {
     ];
 
     const getFreshBoardData = () => JSON.parse(JSON.stringify(BingoBoardData)) as BingoBoard;
-    
+
     const [bingoData, setBingoData] = useState<BingoBoard>(getFreshBoardData);
     const bingoOptions: BingoOptions = bingoData.bingoOptions;
     const [cardState, setCardState] = useState<boolean[][]>(BLANK_STATE);
@@ -126,7 +126,7 @@ export default function BingoCard() {
                 do {
                     penaltyOption =
                         bingoData.penaltyTypes[
-                            getRandomInt(bingoData.penaltyTypes.length)
+                        getRandomInt(bingoData.penaltyTypes.length)
                         ];
                 } while (penaltyOption.isOnCard);
 
@@ -294,7 +294,7 @@ export default function BingoCard() {
         const newCardState = { ...cardState };
         newCardState[Math.floor(index / 5)][index % 5] = tiles[index].isChecked;
         setCardState(newCardState);
-        
+
         const isBingo: boolean = winChecker();
         setGotBingo(isBingo);
 
@@ -366,16 +366,16 @@ export default function BingoCard() {
                     </DialogTitle>
                     <div className="flex items-center justify-between p-6">
                         <button
+                            className="bg-gray-500 hover:bg-habs-blue text-white font-bold py-2 px-4 rounded cursor-pointer"
+                            onClick={handleClose}
+                        >
+                            Cancel
+                        </button>
+                        <button
                             className="bg-habs-red hover:bg-habs-blue text-white font-bold py-2 px-4 rounded cursor-pointer"
                             onClick={handleConfirm}
                         >
                             Sure
-                        </button>
-                        <button
-                            className="bg-habs-red hover:bg-habs-blue text-white font-bold py-2 px-4 rounded cursor-pointer"
-                            onClick={handleClose}
-                        >
-                            Never mind
                         </button>
                     </div>
                 </Dialog>
@@ -397,7 +397,7 @@ export default function BingoCard() {
                     </DialogActions>
                 </Dialog>
             </div>
-            <div className="sm:aspect-square sm:w-200 grid grid-cols-5 grid-rows-5 gap-3 mt-2">
+            <div className="sm:aspect-square sm:w-200 max-w-full grid grid-cols-5 grid-rows-5 gap-3 mt-2 mx-auto">
                 {tiles.map((tile, index) => (
                     <BingoTile
                         key={index}
