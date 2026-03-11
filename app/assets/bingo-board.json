@@ -27,7 +27,7 @@
         {
             "name": "Caufield",
             "position": "Winger",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Dach",
@@ -112,7 +112,7 @@
         {
             "name": "Struble",
             "position": "Defenceman",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Suzuki",
@@ -122,7 +122,7 @@
         {
             "name": "Texier",
             "position": "Winger",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Veleno",
@@ -132,7 +132,7 @@
         {
             "name": "Xhekaj",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         }
     ],
     "bingoTileOptions": [
