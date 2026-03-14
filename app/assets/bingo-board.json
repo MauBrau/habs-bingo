@@ -27,7 +27,7 @@
         {
             "name": "Caufield",
             "position": "Winger",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Dach",
@@ -62,7 +62,7 @@
         {
             "name": "Gallagher",
             "position": "Winger",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Guhle",
