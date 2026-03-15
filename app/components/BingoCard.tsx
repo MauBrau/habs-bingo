@@ -33,7 +33,6 @@ export default function BingoCard() {
     const getFreshBoardData = () => JSON.parse(JSON.stringify(BingoBoardData)) as BingoBoard;
 
     const [bingoData, setBingoData] = useState<BingoBoard>(getFreshBoardData);
-    const bingoOptions: BingoOptions = bingoData.bingoOptions;
     const [cardState, setCardState] = useState<boolean[][]>(BLANK_STATE);
     const [currentBingos, setCurrentBingos] = useState<number[][]>([]);
     const [gotBingo, setGotBingo] = useState<boolean>(false);
@@ -62,8 +61,8 @@ export default function BingoCard() {
                 localStorage.getItem("generationDate") as string,
             );
             const timeSince: number = new Date().getTime() - lastDate.getTime();
-            if (timeSince >= 60 * 60 * 24 * 1000) {
-                storeBoard();
+            if (timeSince >= 18 * 60 * 60 * 1000) { // 18 hours
+                storeBoard(bingoData);
             } else {
                 const existingBoard: TileStatus[] = JSON.parse(
                     localStorage.getItem("tiles") as string,
@@ -79,12 +78,12 @@ export default function BingoCard() {
                 setCurrentBingos(existingBingos);
             }
         } else {
-            storeBoard();
+            storeBoard(bingoData);
         }
     }, []);
 
-    const storeBoard = () => {
-        let generatedBoard: TileStatus[] = generateBoard();
+    const storeBoard = (data : BingoBoard) => {
+        let generatedBoard: TileStatus[] = generateBoard(data);
         generatedBoard[FREE_SPACE] = {
             text: "FREE",
             isChecked: true,
@@ -97,14 +96,14 @@ export default function BingoCard() {
         setTiles(generatedBoard);
     };
 
-    const generateBoard = () => {
+    const generateBoard = (data : BingoBoard) => {
         let generatedBoard: TileStatus[] = [];
         for (let i = 0; i < NUM_TILES; i++) {
             let bingoTileOption: BingoTileOption, randomValue: number;
             do {
-                randomValue = getRandomInt(bingoData.bingoTileOptions.length);
-                bingoTileOption = bingoData.bingoTileOptions[randomValue];
-            } while (tileTypeChecker(bingoTileOption, bingoOptions));
+                randomValue = getRandomInt(data.bingoTileOptions.length);
+                bingoTileOption = data.bingoTileOptions[randomValue];
+            } while (tileTypeChecker(bingoTileOption, data.bingoOptions));
 
             bingoTileOption.isOnCardCount =
                 (bingoTileOption.isOnCardCount ?? 0) + 1;
@@ -125,8 +124,8 @@ export default function BingoCard() {
                 let penaltyOption: PenaltyTypes;
                 do {
                     penaltyOption =
-                        bingoData.penaltyTypes[
-                        getRandomInt(bingoData.penaltyTypes.length)
+                        data.penaltyTypes[
+                        getRandomInt(data.penaltyTypes.length)
                         ];
                 } while (penaltyOption.isOnCard);
 
@@ -302,7 +301,7 @@ export default function BingoCard() {
         localStorage.setItem("cardState", JSON.stringify(newCardState));
     };
 
-    const clearOptions = () => {
+    const refreshCard = () => {
         const freshData = getFreshBoardData();
         setBingoData(freshData);
         setPlayers(
@@ -318,14 +317,15 @@ export default function BingoCard() {
 
         usedPenaltyCount = 0;
         usedPlayersCount = 0;
+        
+        storeBoard(freshData);
     };
 
     const newCardConfirmation = () => {
         setOpenNewCardPrompt(true);
     };
     const handleConfirm = () => {
-        clearOptions();
-        storeBoard();
+        refreshCard();
         setOpenNewCardPrompt(false);
     };
     const handleClose = () => {
