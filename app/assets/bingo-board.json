@@ -112,7 +112,7 @@
         {
             "name": "Struble",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Suzuki",
@@ -132,7 +132,7 @@
         {
             "name": "Xhekaj",
             "position": "Defenceman",
-            "isActivePlayer": false
+            "isActivePlayer": true
         }
     ],
     "bingoTileOptions": [
