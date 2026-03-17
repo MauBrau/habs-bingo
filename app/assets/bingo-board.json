@@ -32,7 +32,7 @@
         {
             "name": "Dach",
             "position": "Centre",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Danault",
@@ -112,7 +112,7 @@
         {
             "name": "Struble",
             "position": "Defenceman",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Suzuki",
@@ -132,7 +132,7 @@
         {
             "name": "Xhekaj",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         }
     ],
     "bingoTileOptions": [
