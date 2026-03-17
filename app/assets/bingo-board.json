@@ -17,7 +17,7 @@
         {
             "name": "Bolduc",
             "position": "Winger",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Carrier",
