@@ -7,7 +7,7 @@
         {
             "name": "Anderson",
             "position": "Winger",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Blais",
@@ -127,7 +127,7 @@
         {
             "name": "Veleno",
             "position": "Centre",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Xhekaj",
