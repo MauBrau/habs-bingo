@@ -1,0 +1,333 @@
+{
+    "bingoOptions" :{
+        "penaltyLimit": 3,
+        "playerLimit": 5
+    },
+    "players": [
+        {
+            "name": "Anderson",
+            "position": "Winger",
+            "isActivePlayer": false
+        },
+        {
+            "name": "Blais",
+            "position": "Winger",
+            "isActivePlayer": false
+        },
+        {
+            "name": "Bolduc",
+            "position": "Winger",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Carrier",
+            "position": "Defenceman",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Caufield",
+            "position": "Winger",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Dach",
+            "position": "Centre",
+            "isActivePlayer": false
+        },
+        {
+            "name": "Danault",
+            "position": "Centre",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Demidov",
+            "position": "Winger",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Dobes",
+            "position": "Goalie",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Dobson",
+            "position": "Defenceman",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Evans",
+            "position": "Centre",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Gallagher",
+            "position": "Winger",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Guhle",
+            "position": "Defenceman",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Hutson",
+            "position": "Defenceman",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Kahkonen",
+            "position": "Goalie",
+            "isActivePlayer": false
+        },
+        {
+            "name": "Kapanen",
+            "position": "Centre",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Laine",
+            "position": "Winger",
+            "isActivePlayer": false
+        },
+        {
+            "name": "Matheson",
+            "position": "Defenceman",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Montembeault",
+            "position": "Goalie",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Newhook",
+            "position": "Centre",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Slafkovsky",
+            "position": "Winger",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Struble",
+            "position": "Defenceman",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Suzuki",
+            "position": "Centre",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Texier",
+            "position": "Winger",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Veleno",
+            "position": "Centre",
+            "isActivePlayer": true
+        },
+        {
+            "name": "Xhekaj",
+            "position": "Defenceman",
+            "isActivePlayer": false
+        }
+    ],
+    "bingoTileOptions": [
+        { 
+            "text": "Penalty: ",
+            "type": "Penalty"
+        },
+        { 
+            "text": "Habs get a shut out",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs kill a penalty",
+            "type": "Generic"
+        },
+        { 
+            "text": "Icing called",
+            "type": "Generic"
+        },
+        { 
+            "text": "Stick breaks",
+            "type": "Generic"
+        },
+        { 
+            "text": "Overtime",
+            "type": "Generic"
+        },
+        { 
+            "text": "Scrum",
+            "type": "Generic"
+        },
+        { 
+            "text": "Puck goes wide",
+            "type": "Generic"
+        },
+        { 
+            "text": "Spotted the mascot",
+            "type": "Generic"
+        },
+        { 
+            "text": "Slow-mo replay",
+            "type": "Generic"
+        },
+        { 
+            "text": "Player spits",
+            "type": "Generic"
+        },
+        { 
+            "text": "Ref can't get mic to work",
+            "type": "Generic"
+        },
+        { 
+            "text": "Player argues with ref",
+            "type": "Generic"
+        },
+        { 
+            "text": "Delayed penalty",
+            "type": "Generic"
+        },
+        { 
+            "text": "Fight",
+            "type": "Generic"
+        },
+        { 
+            "text": "Offside called",
+            "type": "Generic"
+        },
+        { 
+            "text": "Coach's Challenge",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs score in the first",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs score in the second",
+            "type": "Generic"
+        },
+        { 
+            "text": "Shot hits the post",
+            "type": "Generic"
+        },
+        { 
+            "text": "Breakaway",
+            "type": "Generic"
+        },
+        { 
+            "text": "Timeout called (either team)",
+            "type": "Generic"
+        },
+        { 
+            "text": "Goal, first 5 minutes of any period",
+            "type": "Generic"
+        },
+        { 
+            "text": "Goal, last 5 minutes of any period",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs powerplay goal",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs short-handed goal",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs get powerplay",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs player: 2+ goals",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs have 10+ shots on goal",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs have 20+ shots on goal",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs have 30+ shots on goal",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs goalie has 10+ saves",
+            "type": "Generic"
+        },
+                { 
+            "text": "Habs goalie has 20+ saves",
+            "type": "Generic"
+        },
+        { 
+            "text": "Habs goalie has 30+ saves",
+            "type": "Generic"
+        },
+        { 
+            "text": "5 on 3 (either team)",
+            "type": "Generic"
+        },
+        { 
+            "text": "5+ total goals (both teams)",
+            "type": "Generic"
+        },
+        { 
+            "text": "Unassisted goal",
+            "type": "Generic"
+        },
+                { 
+            "text": "2 assists on any goal",
+            "type": "Generic"
+        },
+        { 
+            "text": " goal",
+            "type": "Player"
+        },
+        { 
+            "text": " assist",
+            "type": "Player"
+        },
+        { 
+            "text": " point",
+            "type": "Player"
+        }
+    ],
+    "penaltyTypes": [
+        { 
+            "text": " elbowing"
+        },
+        { 
+            "text": " hooking"
+        },
+        { 
+            "text": " tripping"
+        },
+        { 
+            "text": " roughing"
+        },
+        { 
+            "text": " interference"
+        },
+        { 
+            "text": " slashing"
+        },
+        { 
+            "text": " holding"
+        },
+        { 
+            "text": " high-sticking"
+        },
+        { 
+            "text": " too many men"
+        }
+    ]
+}
