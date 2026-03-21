@@ -1,0 +1,25 @@
+{
+    "options": [
+        {
+            "id": "dark_mode",
+            "text": "Dark mode",
+            "isEnabled": false,
+            "cssClass": "dark",
+            "isImmediate": true
+        },
+        {
+            "id": "smaller_font",
+            "text": "Smaller font",
+            "isEnabled": false,
+            "cssClass": "smaller-font",
+            "isImmediate": true
+        },
+        {
+            "id": "silly_mode",
+            "text": "Enable Silly Mode 👀?",
+            "subtext": "(This will reset your current card if enabled)",
+            "isEnabled": false,
+            "isImmediate": false
+        }
+    ]
+}

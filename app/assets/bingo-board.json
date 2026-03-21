@@ -1,7 +1,9 @@
 {
-    "bingoOptions" :{
+    "bingoOptions": {
         "penaltyLimit": 3,
-        "playerLimit": 5
+        "playerLimit": 5,
+        "playerMin": 2,
+        "penaltyMin": 1
     },
     "players": [
         {
@@ -136,219 +138,251 @@
         }
     ],
     "bingoTileOptions": [
-        { 
+        {
             "text": "Penalty: ",
             "type": "Penalty"
         },
-        { 
+        {
             "text": "Habs get a shut out",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Habs kill a penalty",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Icing called",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Stick breaks",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Overtime",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Scrum",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Puck goes wide",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Spotted the mascot",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Slow-mo replay",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Player spits",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Ref can't get mic to work",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Player argues with ref",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Delayed penalty",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Fight",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Offside called",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Coach's Challenge",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Habs score in the first",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Habs score in the second",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Shot hits the post",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Breakaway",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Timeout called (either team)",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Goal, first 5 minutes of any period",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Goal, last 5 minutes of any period",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Habs powerplay goal",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Habs short-handed goal",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Habs get powerplay",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Habs player: 2+ goals",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Habs have 10+ shots on goal",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Habs have 20+ shots on goal",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Habs have 30+ shots on goal",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Habs goalie has 10+ saves",
             "type": "Generic"
         },
-                { 
+        {
             "text": "Habs goalie has 20+ saves",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Habs goalie has 30+ saves",
             "type": "Generic"
         },
-        { 
+        {
             "text": "5 on 3 (either team)",
             "type": "Generic"
         },
-        { 
+        {
             "text": "5+ total goals (both teams)",
             "type": "Generic"
         },
-        { 
+        {
             "text": "Unassisted goal",
             "type": "Generic"
         },
-                { 
+        {
             "text": "2 assists on any goal",
             "type": "Generic"
         },
-        { 
+        {
             "text": " goal",
             "type": "Player"
         },
-        { 
+        {
             "text": " assist",
             "type": "Player"
         },
-        { 
+        {
             "text": " point",
             "type": "Player"
         }
     ],
     "bingoTileOptionsSilly": [
-        { 
-            "text": "Bet he wishes he could take that one back",
-            "type": "Generic"
+        {
+            "text": "\"Bet he wishes he could take that one back\"",
+            "type": "Silly"
         },
-        { 
+        {
             "text": "Players point when puck's over glass",
-            "type": "Generic"
+            "type": "Silly"
         },
-        { 
-            "text": "Lost a skake blade",
-            "type": "Generic"
+        {
+            "text": "Player blows a tire",
+            "type": "Silly"
         },
-        { 
-            "text": "You can't help but say a player's name outloud in a funny voice",
-            "type": "Generic"
+        {
+            "text": "You can't help but say a player's name in a voice",
+            "type": "Silly"
         },
-        { 
-            "text": "You can't help but say a player's name outloud in a funny voice",
-            "type": "Generic"
+        {
+            "text": "\"Newhook...\" moment",
+            "type": "Silly"
+        },
+        {
+            "text": "Broadcasting error",
+            "type": "Silly"
+        },
+        {
+            "text": "Olé, Olé, Olé",
+            "type": "Silly"
+        },
+        {
+            "text": "Neon shirt in crowd",
+            "type": "Silly"
+        },
+        {
+            "text": "Shake n Bake Hudson moment",
+            "type": "Silly"
+        },
+        {
+            "text": "Announcer says a (potential) jinx",
+            "type": "Silly"
+        },
+        {
+            "text": "A beauty of a goal",
+            "type": "Silly"
+        },
+        {
+            "text": "Someone spoils a goal",
+            "type": "Silly"
+        },
+        {
+            "text": "Someone (Gally?) looks completely exhausted",
+            "type": "Silly"
         }
     ],
     "penaltyTypes": [
-        { 
+        {
             "text": " elbowing"
         },
-        { 
+        {
             "text": " hooking"
         },
-        { 
+        {
             "text": " tripping"
         },
-        { 
+        {
             "text": " roughing"
         },
-        { 
+        {
             "text": " interference"
         },
-        { 
+        {
             "text": " slashing"
         },
-        { 
+        {
             "text": " holding"
         },
-        { 
+        {
             "text": " high-sticking"
         },
-        { 
+        {
             "text": " too many men"
         }
     ]
