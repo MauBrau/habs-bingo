@@ -171,7 +171,7 @@
             "type": "Generic"
         },
         {
-            "text": "Spotted the mascot",
+            "text": "Spot the mascot",
             "type": "Generic"
         },
         {
@@ -180,10 +180,6 @@
         },
         {
             "text": "Player spits",
-            "type": "Generic"
-        },
-        {
-            "text": "Ref can't get mic to work",
             "type": "Generic"
         },
         {
@@ -212,6 +208,10 @@
         },
         {
             "text": "Habs score in the second",
+            "type": "Generic"
+        },
+        {
+            "text": "Habs score in the third",
             "type": "Generic"
         },
         {
@@ -353,7 +353,31 @@
             "type": "Silly"
         },
         {
-            "text": "Someone (Gally?) looks completely exhausted",
+            "text": "Player (Gally?) looks exhausted",
+            "type": "Silly"
+        },
+        {
+            "text": "Good/Silky hands comment",
+            "type": "Silly"
+        },
+        {
+            "text": "On the tape / tape-to-tap",
+            "type": "Silly"
+        },
+        {
+            "text": "Player gets robbed",
+            "type": "Silly"
+        },
+        {
+            "text": "Goalie does a dramatic glove save",
+            "type": "Silly"
+        },
+        {
+            "text": "Player hits the gas",
+            "type": "Silly"
+        },
+        {
+            "text": "Ref can't get mic to work",
             "type": "Silly"
         }
     ],

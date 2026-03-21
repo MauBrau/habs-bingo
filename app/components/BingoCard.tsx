@@ -17,6 +17,8 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import BingoBoardData from "../assets/bingo-board.json";
 import { Setting, Settings } from "../interface/ISettings";
 import { useSettings } from "./SettingsContext";
+import { HelpOutline } from "@mui/icons-material";
+import HelpData from "../assets/help.json";
 
 // export const thisIsAnUnusedExport =
 //     "this export only exists to disable fast refresh for this file";
@@ -36,6 +38,7 @@ export default function BingoCard() {
     const [tiles, setTiles] = useState<TileStatus[]>([]);
     const [openNewCardPrompt, setOpenNewCardPrompt] = useState<boolean>(false);
     const [openSettings, setOpenSettings] = useState<boolean>(false);
+    const [openHelp, setOpenHelp] = useState<boolean>(false);
 
     const { settings, updateSettings } = useSettings();
     const [draftSettings, setDraftSettings] = useState<Settings>(settings);
@@ -410,26 +413,54 @@ export default function BingoCard() {
     }
     //#endregion
 
+    //#region Help
+    const handleHelpClose = () => {
+        setOpenHelp(false);
+    }
+    //#endregion
+
     return tiles.length > 0 ? (
-        <div className="bg-card-background text-foreground h-max sm:p-6 p-2 mb-4 rounded-lg shadow-xl animate-in fade-in zoom-in duration-300">
+        <div className="bg-card-background text-foreground h-max sm:p-6 p-2 mb-4 rounded-lg shadow-xl">
             <div>
                 <div className="flex flex-wrap items-center justify-between">
                     <HabsBingoLogo />
-                    <div>
+                    <div className="flex w-full sm:w-auto items-center justify-between sm:justify-end mt-4 sm:mt-0 gap-3 sm:gap-5">
                         <button
                             onClick={newCardConfirmation}
                             className="bg-habs-red hover:bg-habs-blue text-white font-bold py-2 px-4 rounded cursor-pointer"
                         >
                             New Card?
                         </button>
-                        <IconButton
-                            onClick={() => setOpenSettings(true)}
-                            aria-label="settings"
-                            className="bg-habs-red hover:bg-habs-blue text-white transition-colors duration-200"
-                            size="large"
-                        >
-                            <SettingsIcon fontSize="large" />
-                        </IconButton>
+                        <div className="flex items-center -ml-2 -space-x-1 sm:-space-x-2">
+                            <IconButton
+                                onClick={() => setOpenSettings(true)}
+                                aria-label="settings"
+                                size="large"
+                                sx={{
+                                    color: 'var(--habs-red)',
+                                    transition: 'background-color 0.2s',
+                                    '&:hover': {
+                                        bgcolor: 'transparent',
+                                    }
+                                }}
+                            >
+                                <SettingsIcon fontSize="large" />
+                            </IconButton>
+                            <IconButton
+                                onClick={() => setOpenHelp(true)}
+                                aria-label="help"
+                                size="large"
+                                sx={{
+                                    color: 'var(--habs-red)',
+                                    transition: 'background-color 0.2s',
+                                    '&:hover': {
+                                        bgcolor: 'transparent',
+                                    }
+                                }}
+                            >
+                                <HelpOutline fontSize="large" />
+                            </IconButton>
+                        </div>
                     </div>
                 </div>
                 <Dialog
@@ -546,8 +577,40 @@ export default function BingoCard() {
                         </button>
                     </DialogActions>
                 </Dialog>
+                <Dialog
+                    open={openHelp}
+                    slotProps={{
+                        paper: {
+                            sx: {
+                                bgcolor: 'var(--dialog-background)',
+                                color: 'var(--foreground)',
+                            }
+                        }
+                    }}
+                >
+                    <DialogTitle id="alert-help-dialog-title" sx={{ textAlign: 'center', fontWeight: 'bold' }}>
+                        Information
+                    </DialogTitle>
+                    <DialogContent sx={{ textAlign: 'left' }}>
+                        {HelpData.helpText.map((paragraph, index) => (
+                            <DialogContentText
+                                key={index}
+                                sx={{ color: 'var(--foreground)', mb: 2 }}
+                                dangerouslySetInnerHTML={{ __html: paragraph }}
+                            />
+                        ))}
+                    </DialogContent>
+                    <DialogActions sx={{ justifyContent: "center", pb: 3, px: 3 }}>
+                        <button
+                            className="bg-habs-red hover:bg-habs-blue text-white font-bold py-2 px-4 rounded cursor-pointer"
+                            onClick={handleHelpClose}
+                        >
+                            Thanks
+                        </button>
+                    </DialogActions>
+                </Dialog>
             </div>
-            <div className="sm:aspect-square sm:w-200 max-w-full grid grid-cols-5 grid-rows-5 gap-3 mt-2 mx-auto">
+            <div className="aspect-[4/5] sm:aspect-square w-full sm:max-w-[650px] grid grid-cols-5 grid-rows-5 gap-1.5 sm:gap-3 mt-2 mx-auto">
                 {tiles.map((tile, index) => (
                     <BingoTile
                         key={index}

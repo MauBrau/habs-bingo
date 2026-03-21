@@ -8,6 +8,7 @@
   --outline: #7e7e7e;
   --habs-red: #AF1E2D;
   --habs-blue: #192168;
+  --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 .dark {
@@ -15,11 +16,14 @@
   --foreground: #f0f0f0;
   --card-background: #181818;
   --dialog-background: #252525;
-  --habs-blue: #2a3eb1; /* Brightened for dark mode legibility */
+  --habs-blue: #2a3eb1;
+  --shadow-color: rgba(42, 62, 177, 0.4);
 }
 
-.smaller-font {
-  font-size: 0.8rem;
+.smaller-tile-text .bingo-tile-text {
+  /* font-size: 0.8rem; */
+  font-weight: 400;
+  letter-spacing: -1px;
 }
 
 @theme {
@@ -29,6 +33,7 @@
   --color-foreground: var(--foreground);
   --color-card-background: var(--card-background);
   --color-dialog-background: var(--dialog-background);
+  --shadow-xl: 0 20px 25px -5px var(--shadow-color), 0 8px 10px -6px var(--shadow-color);
 }
 
 @theme inline {

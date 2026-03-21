@@ -8,10 +8,10 @@
             "isImmediate": true
         },
         {
-            "id": "smaller_font",
-            "text": "Smaller font",
+            "id": "smaller_tile_text",
+            "text": "Smaller tile text",
             "isEnabled": false,
-            "cssClass": "smaller-font",
+            "cssClass": "smaller-tile-text",
             "isImmediate": true
         },
         {
