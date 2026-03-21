@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <SettingsProvider>
       <main>
-        <div className="font-sans items-center justify-items-center sm:p-8">
+        <div className="font-sans items-center justify-items-center sm:p-2">
           {lastUpdated && (
             <p className="text-center text-xs text-(--outline) mt-2 pb-4 font-mono">
               Line-up last updated: {lastUpdated}

@@ -136,11 +136,11 @@ export default function BingoCard() {
     //#region Bingo Board Creation
     const storeBoard = (data: BingoBoard) => {
         let generatedBoard: TileStatus[] = generateBoard(data);
-        generatedBoard[FREE_SPACE] = {
+        generatedBoard.splice(FREE_SPACE, 0, {
             text: "FREE",
             isChecked: true,
             isLocked: true,
-        };
+        });
         localStorage.setItem("tiles", JSON.stringify(generatedBoard));
         localStorage.setItem("generationDate", new Date().toString());
         localStorage.setItem("cardState", JSON.stringify(BLANK_STATE));
@@ -160,12 +160,14 @@ export default function BingoCard() {
             ? [...data.bingoTileOptions, ...data.bingoTileOptionsSilly]
             : data.bingoTileOptions;
 
-        for (let i = 0; i < NUM_TILES; i++) {
+        const targetTiles = NUM_TILES - 1;
+        for (let i = 0; i < targetTiles; i++) {
             let bingoTileOption: BingoTileOption, randomValue: number;
+            const remainingTiles = targetTiles - i;
             do {
                 randomValue = getRandomInt(combinedOptions.length);
                 bingoTileOption = combinedOptions[randomValue];
-            } while (tileTypeChecker(bingoTileOption, data.bingoOptions, usedPlayersCount, usedPenaltyCount));
+            } while (tileTypeChecker(bingoTileOption, data.bingoOptions, usedPlayersCount, usedPenaltyCount, remainingTiles));
 
             bingoTileOption.isOnCardCount =
                 (bingoTileOption.isOnCardCount ?? 0) + 1;
@@ -204,7 +206,7 @@ export default function BingoCard() {
                 });
             }
         }
-        return generatedBoard;
+        return generatedBoard.sort(() => Math.random() - 0.5);
     };
 
     const getRandomInt = (max: number) => {
@@ -215,9 +217,24 @@ export default function BingoCard() {
         tileType: BingoTileOption,
         bingoOptions: BingoOptions,
         usedPlayersCount: number,
-        usedPenaltyCount: number
+        usedPenaltyCount: number,
+        remainingTiles: number
     ) => {
         const { type, isOnCardCount = 0 } = tileType;
+        const playerMin = bingoOptions.playerMin || 0;
+        const penaltyMin = bingoOptions.penaltyMin || 0;
+
+        const remainingPlayerMin = Math.max(0, playerMin - usedPlayersCount);
+        const remainingPenaltyMin = Math.max(0, penaltyMin - usedPenaltyCount);
+
+        if (remainingTiles <= remainingPlayerMin + remainingPenaltyMin) {
+            if (remainingPlayerMin > 0 && type !== BingoCardType.PlayerSpecific) {
+                return true;
+            }
+            if (remainingPlayerMin === 0 && remainingPenaltyMin > 0 && type !== BingoCardType.Penalty) {
+                return true;
+            }
+        }
 
         if (type === BingoCardType.Penalty && usedPenaltyCount >= bingoOptions.penaltyLimit) {
             return true;

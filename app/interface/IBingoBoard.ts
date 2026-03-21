@@ -26,7 +26,9 @@ export interface Player {
 
 export interface BingoOptions {
     penaltyLimit: number,
-    playerLimit: number
+    playerLimit: number,
+    playerMin?: number,
+    penaltyMin?: number
 }
 
 export interface PenaltyTypes {
