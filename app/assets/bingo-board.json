@@ -7,7 +7,7 @@
         {
             "name": "Anderson",
             "position": "Winger",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Blais",
@@ -32,7 +32,7 @@
         {
             "name": "Dach",
             "position": "Centre",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Danault",
@@ -112,7 +112,7 @@
         {
             "name": "Struble",
             "position": "Defenceman",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Suzuki",
@@ -122,17 +122,17 @@
         {
             "name": "Texier",
             "position": "Winger",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Veleno",
             "position": "Centre",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Xhekaj",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         }
     ],
     "bingoTileOptions": [
@@ -150,6 +150,46 @@
         },
         { 
             "text": "Icing called",
+            "type": "Generic"
+        },
+        { 
+            "text": "Stick breaks",
+            "type": "Generic"
+        },
+        { 
+            "text": "Overtime",
+            "type": "Generic"
+        },
+        { 
+            "text": "Scrum",
+            "type": "Generic"
+        },
+        { 
+            "text": "Puck goes wide",
+            "type": "Generic"
+        },
+        { 
+            "text": "Spotted the mascot",
+            "type": "Generic"
+        },
+        { 
+            "text": "Slow-mo replay",
+            "type": "Generic"
+        },
+        { 
+            "text": "Player spits",
+            "type": "Generic"
+        },
+        { 
+            "text": "Ref can't get mic to work",
+            "type": "Generic"
+        },
+        { 
+            "text": "Player argues with ref",
+            "type": "Generic"
+        },
+        { 
+            "text": "Delayed penalty",
             "type": "Generic"
         },
         { 
@@ -309,7 +349,7 @@
             "text": " high-sticking"
         },
         { 
-            "text": " puck over the glass"
+            "text": " too many men"
         }
     ]
 }

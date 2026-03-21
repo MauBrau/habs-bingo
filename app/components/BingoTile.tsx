@@ -23,7 +23,7 @@ export default function BingoTile({ tile, onClick }: BingoTileProps) {
             onClick={handleClick}
         >
             <p
-                className={`leading-5 ${tile.isChecked ? "text-gray-100" : "text-black"} font-bold text-center group-hover:text-gray-100 wrap-anywhere hyphens-auto sm:hyphens-none `}
+                className={`leading-tight ${tile.isChecked ? "text-gray-100" : "text-black"} font-bold text-center group-hover:text-gray-100 break-words hyphens-auto sm:hyphens-none px-0.5`}
                 lang="en"
             >
                 {tile.text}
