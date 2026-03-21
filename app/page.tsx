@@ -29,7 +29,7 @@ export default function Home() {
               Line-up last updated: {lastUpdated}
             </p>
           )}
-          <BingoCard />
+          <BingoCard version={lastUpdated} />
         </div>
       </main>
     </SettingsProvider>

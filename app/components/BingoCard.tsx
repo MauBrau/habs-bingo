@@ -23,7 +23,7 @@ import HelpData from "../assets/help.json";
 // export const thisIsAnUnusedExport =
 //     "this export only exists to disable fast refresh for this file";
 
-export default function BingoCard() {
+export default function BingoCard({ version }: { version?: string }) {
     const SIZE: number = 5;
     const NUM_TILES: number = SIZE * SIZE;
     const FREE_SPACE: number = 12;
@@ -100,7 +100,11 @@ export default function BingoCard() {
     }, [isSillyMode, wasGeneratedWithSillyMode, tiles.length]);
 
     useEffect(() => {
+        const storedVersion = localStorage.getItem("boardVersion");
+        const isNewVersion = version && storedVersion !== version;
+
         if (
+            !isNewVersion &&
             localStorage.getItem("tiles") &&
             localStorage.getItem("generationDate") &&
             localStorage.getItem("cardState") &&
@@ -146,6 +150,9 @@ export default function BingoCard() {
         localStorage.setItem("cardState", JSON.stringify(BLANK_STATE));
         localStorage.setItem("currentBingos", JSON.stringify([]));
         localStorage.setItem("wasGeneratedWithSillyMode", isSillyMode?.toString() || "false");
+        if (version) {
+            localStorage.setItem("boardVersion", version);
+        }
 
         setTiles(generatedBoard);
         setWasGeneratedWithSillyMode(isSillyMode || false);
