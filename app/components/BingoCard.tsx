@@ -252,7 +252,7 @@ export default function BingoCard({ version }: { version?: string }) {
         }
 
         if (isOnCardCount > 0) {
-            if (type === BingoCardType.Generic) {
+            if (type === BingoCardType.Generic || type === BingoCardType.Silly) {
                 return true;
             }
             return false;
