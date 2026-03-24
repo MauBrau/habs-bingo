@@ -9,7 +9,7 @@
         {
             "name": "Anderson",
             "position": "Winger",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Blais",
@@ -129,7 +129,7 @@
         {
             "name": "Veleno",
             "position": "Centre",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Xhekaj",
@@ -353,6 +353,22 @@
             "type": "Silly"
         },
         {
+            "text": "Ref leaps out of way",
+            "type": "Silly"
+        },
+        {
+            "text": "\"How did that not go in??\"",
+            "type": "Silly"
+        },
+        {
+            "text": "\"Refs you suck\"",
+            "type": "Silly"
+        },
+        {
+            "text": "\"HandsClap\" by Fitz and The Tantrums plays",
+            "type": "Silly"
+        },
+        {
             "text": "Player (Gally?) looks exhausted",
             "type": "Silly"
         },
@@ -361,7 +377,11 @@
             "type": "Silly"
         },
         {
-            "text": "On the tape / tape-to-tap",
+            "text": "On the tape / tape-to-tape",
+            "type": "Silly"
+        },
+        {
+            "text": "Get back in your net!!",
             "type": "Silly"
         },
         {
