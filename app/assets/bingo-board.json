@@ -9,7 +9,7 @@
         {
             "name": "Anderson",
             "position": "Winger",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Blais",
@@ -134,7 +134,7 @@
         {
             "name": "Xhekaj",
             "position": "Defenceman",
-            "isActivePlayer": false
+            "isActivePlayer": true
         }
     ],
     "bingoTileOptions": [
