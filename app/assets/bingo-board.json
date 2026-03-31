@@ -9,7 +9,7 @@
         {
             "name": "Anderson",
             "position": "Winger",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Blais",
@@ -24,7 +24,7 @@
         {
             "name": "Carrier",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Caufield",
@@ -57,6 +57,11 @@
             "isActivePlayer": true
         },
         {
+            "name": "Engström",
+            "position": "Defenceman",
+            "isActivePlayer": false
+        },
+        {
             "name": "Evans",
             "position": "Centre",
             "isActivePlayer": true
@@ -77,11 +82,6 @@
             "isActivePlayer": true
         },
         {
-            "name": "Kahkonen",
-            "position": "Goalie",
-            "isActivePlayer": false
-        },
-        {
             "name": "Kapanen",
             "position": "Centre",
             "isActivePlayer": true
@@ -99,7 +99,7 @@
         {
             "name": "Montembeault",
             "position": "Goalie",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Newhook",
