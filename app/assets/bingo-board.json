@@ -19,7 +19,7 @@
         {
             "name": "Bolduc",
             "position": "Winger",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Carrier",
@@ -129,7 +129,7 @@
         {
             "name": "Veleno",
             "position": "Centre",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Xhekaj",
