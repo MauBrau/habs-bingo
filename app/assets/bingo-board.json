@@ -19,7 +19,7 @@
         {
             "name": "Bolduc",
             "position": "Winger",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Carrier",
@@ -54,12 +54,12 @@
         {
             "name": "Dobson",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Engström",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Evans",
@@ -74,7 +74,7 @@
         {
             "name": "Guhle",
             "position": "Defenceman",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Hutson",
@@ -107,6 +107,11 @@
             "isActivePlayer": true
         },
         {
+            "name": "Reinbacher",
+            "position": "Defenceman",
+            "isActivePlayer": true
+        },
+        {
             "name": "Slafkovsky",
             "position": "Winger",
             "isActivePlayer": true
@@ -129,7 +134,7 @@
         {
             "name": "Veleno",
             "position": "Centre",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Xhekaj",
