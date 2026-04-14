@@ -39,7 +39,7 @@
         {
             "name": "Danault",
             "position": "Centre",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Demidov",
@@ -59,7 +59,7 @@
         {
             "name": "Engström",
             "position": "Defenceman",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Evans",
@@ -69,7 +69,7 @@
         {
             "name": "Gallagher",
             "position": "Winger",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Guhle",
@@ -94,7 +94,7 @@
         {
             "name": "Matheson",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Montembeault",
@@ -134,7 +134,7 @@
         {
             "name": "Veleno",
             "position": "Centre",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Xhekaj",
