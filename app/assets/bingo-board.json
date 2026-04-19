@@ -9,7 +9,7 @@
         {
             "name": "Anderson",
             "position": "Winger",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Blais",
@@ -24,7 +24,7 @@
         {
             "name": "Carrier",
             "position": "Defenceman",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Caufield",
@@ -39,7 +39,7 @@
         {
             "name": "Danault",
             "position": "Centre",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Demidov",
@@ -59,7 +59,7 @@
         {
             "name": "Engström",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Evans",
@@ -69,7 +69,7 @@
         {
             "name": "Gallagher",
             "position": "Winger",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Guhle",
@@ -94,7 +94,7 @@
         {
             "name": "Matheson",
             "position": "Defenceman",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Montembeault",
@@ -109,7 +109,7 @@
         {
             "name": "Reinbacher",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Slafkovsky",
@@ -134,7 +134,7 @@
         {
             "name": "Veleno",
             "position": "Centre",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Xhekaj",
