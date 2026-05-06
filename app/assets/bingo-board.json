@@ -54,7 +54,7 @@
         {
             "name": "Dobson",
             "position": "Defenceman",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Engström",
@@ -69,7 +69,7 @@
         {
             "name": "Gallagher",
             "position": "Winger",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Guhle",
@@ -119,7 +119,7 @@
         {
             "name": "Struble",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Suzuki",
@@ -134,7 +134,7 @@
         {
             "name": "Veleno",
             "position": "Centre",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Xhekaj",
