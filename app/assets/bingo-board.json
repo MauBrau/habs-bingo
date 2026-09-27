@@ -12,11 +12,6 @@
             "isActivePlayer": true
         },
         {
-            "name": "Blais",
-            "position": "Winger",
-            "isActivePlayer": false
-        },
-        {
             "name": "Bolduc",
             "position": "Winger",
             "isActivePlayer": true
@@ -24,7 +19,7 @@
         {
             "name": "Carrier",
             "position": "Defenceman",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Caufield",
@@ -34,7 +29,7 @@
         {
             "name": "Dach",
             "position": "Centre",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Danault",
@@ -59,7 +54,7 @@
         {
             "name": "Engström",
             "position": "Defenceman",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Evans",
@@ -67,14 +62,9 @@
             "isActivePlayer": true
         },
         {
-            "name": "Gallagher",
-            "position": "Winger",
-            "isActivePlayer": true
-        },
-        {
             "name": "Guhle",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Hutson",
@@ -87,9 +77,9 @@
             "isActivePlayer": true
         },
         {
-            "name": "Laine",
+            "name": "Kreider",
             "position": "Winger",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Matheson",
@@ -99,7 +89,7 @@
         {
             "name": "Montembeault",
             "position": "Goalie",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Newhook",
@@ -124,11 +114,6 @@
         {
             "name": "Texier",
             "position": "Winger",
-            "isActivePlayer": false
-        },
-        {
-            "name": "Veleno",
-            "position": "Centre",
             "isActivePlayer": true
         },
         {
