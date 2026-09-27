@@ -74,7 +74,7 @@
         {
             "name": "Kapanen",
             "position": "Centre",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Kreider",
@@ -97,6 +97,11 @@
             "isActivePlayer": true
         },
         {
+            "name": "Reinbacher",
+            "position": "Defenceman",
+            "isActivePlayer": false
+        },
+        {
             "name": "Slafkovsky",
             "position": "Winger",
             "isActivePlayer": true
@@ -104,7 +109,7 @@
         {
             "name": "Struble",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Suzuki",
