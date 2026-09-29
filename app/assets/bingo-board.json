@@ -54,7 +54,7 @@
         {
             "name": "Engström",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Evans",
