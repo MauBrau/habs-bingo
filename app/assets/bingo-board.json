@@ -39,7 +39,7 @@
         {
             "name": "Demidov",
             "position": "Winger",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Dobes",
