@@ -64,7 +64,7 @@
         {
             "name": "Guhle",
             "position": "Defenceman",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Hutson",
