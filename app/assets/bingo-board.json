@@ -17,6 +17,11 @@
             "isActivePlayer": true
         },
         {
+            "name": "Beck",
+            "position": "Winger",
+            "isActivePlayer": true
+        },
+        {
             "name": "Carrier",
             "position": "Defenceman",
             "isActivePlayer": true
@@ -84,7 +89,7 @@
         {
             "name": "Matheson",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Montembeault",
