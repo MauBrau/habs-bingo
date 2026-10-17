@@ -19,7 +19,7 @@
         {
             "name": "Beck",
             "position": "Winger",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Carrier",
@@ -79,7 +79,7 @@
         {
             "name": "Kapanen",
             "position": "Centre",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Kreider",
@@ -104,7 +104,7 @@
         {
             "name": "Reinbacher",
             "position": "Defenceman",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Slafkovsky",
