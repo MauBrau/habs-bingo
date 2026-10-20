@@ -59,7 +59,7 @@
         {
             "name": "Engström",
             "position": "Defenceman",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Evans",
@@ -104,7 +104,7 @@
         {
             "name": "Reinbacher",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Slafkovsky",
