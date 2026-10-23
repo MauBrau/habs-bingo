@@ -19,7 +19,7 @@
         {
             "name": "Beck",
             "position": "Winger",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Carrier",
@@ -59,7 +59,7 @@
         {
             "name": "Engström",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Evans",
@@ -89,7 +89,7 @@
         {
             "name": "Matheson",
             "position": "Defenceman",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Montembeault",
@@ -114,7 +114,7 @@
         {
             "name": "Suzuki",
             "position": "Centre",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Texier",
