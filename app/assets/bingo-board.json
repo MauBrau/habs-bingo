@@ -19,7 +19,7 @@
         {
             "name": "Beck",
             "position": "Winger",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Carrier",
@@ -34,7 +34,7 @@
         {
             "name": "Dach",
             "position": "Centre",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Danault",
