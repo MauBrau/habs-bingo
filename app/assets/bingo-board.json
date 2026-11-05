@@ -114,7 +114,7 @@
         {
             "name": "Suzuki",
             "position": "Centre",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Texier",
