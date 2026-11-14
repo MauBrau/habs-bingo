@@ -84,7 +84,7 @@
         {
             "name": "Kreider",
             "position": "Winger",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Matheson",
