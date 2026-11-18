@@ -22,6 +22,11 @@
             "isActivePlayer": true
         },
         {
+            "name": "Berard",
+            "position": "Winger",
+            "isActivePlayer": true
+        },
+        {
             "name": "Carrier",
             "position": "Defenceman",
             "isActivePlayer": true
