@@ -23,7 +23,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          id="theme-initializer"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var saved = localStorage.getItem('habs-bingo-settings');
+                  if (saved) {
+                    var settings = JSON.parse(saved);
+                    if (settings && settings.options) {
+                      settings.options.forEach(function(opt) {
+                        if (opt.cssClass && opt.isEnabled) {
+                          document.documentElement.classList.add(opt.cssClass);
+                        }
+                      });
+                    }
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

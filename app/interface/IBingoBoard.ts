@@ -8,7 +8,8 @@ export enum PlayerPositions {
 export enum BingoCardType {
     Generic = "Generic",
     PlayerSpecific = "Player",
-    Penalty = "Penalty"
+    Penalty = "Penalty",
+    Silly = "Silly"
 }
 export interface TileStatus {
     text: string,
@@ -25,7 +26,9 @@ export interface Player {
 
 export interface BingoOptions {
     penaltyLimit: number,
-    playerLimit: number
+    playerLimit: number,
+    playerMin?: number,
+    penaltyMin?: number
 }
 
 export interface PenaltyTypes {
@@ -42,6 +45,7 @@ export interface BingoTileOption {
 export interface BingoBoard {
     bingoOptions: BingoOptions,
     players: Player[],
-    bingoTileOptions: BingoTileOption[]
+    bingoTileOptions: BingoTileOption[],
+    bingoTileOptionsSilly: BingoTileOption[],
     penaltyTypes: PenaltyTypes[];
 }
