@@ -14,7 +14,7 @@
         {
             "name": "Bolduc",
             "position": "Winger",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Beck",
