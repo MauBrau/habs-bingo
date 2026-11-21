@@ -14,7 +14,7 @@
         {
             "name": "Bolduc",
             "position": "Winger",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Beck",
@@ -64,7 +64,7 @@
         {
             "name": "Engström",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Evans",
@@ -109,7 +109,7 @@
         {
             "name": "Reinbacher",
             "position": "Defenceman",
-            "isActivePlayer": false
+            "isActivePlayer": true
         },
         {
             "name": "Slafkovsky",
