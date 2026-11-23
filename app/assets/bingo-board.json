@@ -24,7 +24,7 @@
         {
             "name": "Berard",
             "position": "Winger",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Carrier",
@@ -34,11 +34,6 @@
         {
             "name": "Caufield",
             "position": "Winger",
-            "isActivePlayer": true
-        },
-        {
-            "name": "Dach",
-            "position": "Centre",
             "isActivePlayer": true
         },
         {
@@ -90,16 +85,16 @@
             "name": "Kreider",
             "position": "Winger",
             "isActivePlayer": false
+        },  
+        {
+            "name": "Larkin",
+            "position": "Centre",
+            "isActivePlayer": true
         },
         {
             "name": "Matheson",
             "position": "Defenceman",
             "isActivePlayer": false
-        },
-        {
-            "name": "Montembeault",
-            "position": "Goalie",
-            "isActivePlayer": true
         },
         {
             "name": "Newhook",
@@ -109,7 +104,7 @@
         {
             "name": "Reinbacher",
             "position": "Defenceman",
-            "isActivePlayer": true
+            "isActivePlayer": false
         },
         {
             "name": "Slafkovsky",
